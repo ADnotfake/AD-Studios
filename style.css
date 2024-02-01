@@ -1,0 +1,194 @@
+:root {
+    --background-1: #1c1c1e;
+    --background-2: #2c2c2e;
+    --text-1: #fff;
+    --text-2: #b3b3b3;
+    --error: #ff7b73;
+    --warning: #ffa55b;
+    --success: #7fdb6a;
+    --info: #4b8fd4;
+    --accent: #1e90ff;
+    --accent-2: #007acc;
+    --normal: #666;
+    --font: Arial, Helvetica, sans-serif;
+}
+
+:root,
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+* {
+    color: var(--text-1);
+    font-family: var(--font);
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-2);
+}
+
+header {
+    background-color: var(--background-1);
+    height: 75px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.125);
+    overflow: hidden;
+    gap: 5px;
+}
+
+header a {
+    color: var(--text-1);
+    padding: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    user-select: none;
+    transition: color 0.25s ease-in-out;
+}
+
+header a.active,
+header a:hover {
+    color: var(--accent);
+}
+
+header p {
+    font-size: 30px;
+    margin-left: 20px;
+    margin-right: auto;
+    user-select: none;
+}
+
+header #nav-button {
+    display: none;
+    position: absolute;
+    width: 30px;
+    text-align: center;
+    font-size: 30px;
+    margin: 5px;
+    padding: 12.5px;
+    border-radius: 100%;
+    user-select: none;
+}
+
+header #nav-button:hover {
+    background-color: var(--background-2);
+}
+
+header #nav {
+    overflow: hidden;
+}
+
+@media screen and (max-width: 500px) {
+    header p {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+    header #nav-button {
+        display: initial;
+    }
+    header #nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        height: 0;
+        background-color: var(--background-1);
+    }
+    header #nav.open {
+        top: 75px;
+        width: 100%;
+        height: auto;
+    }
+}
+
+footer {
+    display: flex;
+    position: absolute;
+    height: 50px;
+    width: 100vw;
+    background-color: var(--background-1);
+    bottom: 0;
+}
+
+footer div {
+    margin: auto;
+    display: flex;
+    user-select: none;
+}
+
+footer p {
+    font-size: 1em;
+    margin: 0;
+}
+
+footer a img {
+    height: calc(1em + 2px);
+    margin: 0px 5px;
+    filter: brightness(100);
+}
+
+footer a:hover img {
+    cursor: pointer;
+    filter: brightness(100) brightness(0.5);
+}
+
+content {
+    display: block;
+    box-sizing: border-box;
+    height: calc(100% - 105px);
+    padding: 20px;
+}
+
+content .game {
+    width: 300px;
+    padding: 5px;
+    background: var(--background-1);
+}
+
+content .game p {
+    text-align: center;
+    color: var(--text-2);
+    font-weight: 400;
+    padding: 15px 0px;
+    padding-bottom: 5px;
+    margin: 0;
+    font-size: x-large;
+}
+
+content .game .image {
+    aspect-ratio: 2;
+    object-fit: contain;
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid var(--info);
+    border-radius: 7px;
+    background-color: #000;
+    user-select: none;
+}
+
+content .game .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+content .game .play {
+    display: block;
+    margin: 20px;
+    padding: 10px;
+    width: calc(100% - 60px);
+    border-radius: 7px;
+    text-align: center;
+    background-color: var(--success);
+    text-decoration: none;
+    color: #000;
+    font-weight: 1000;
+    font-size: x-large;
+    user-select: none;
+}
+
+content .game .play:hover {
+    filter: brightness(0.8);
+}
